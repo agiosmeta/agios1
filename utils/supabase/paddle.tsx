@@ -1,18 +1,24 @@
-import { initializePaddle, Paddle } from '@paddle/paddle-js'
-import { useState, useEffect } from 'react'
+'use client'
+
+import { useEffect, useState } from 'react'
 
 export const usePaddle = () => {
-  const [paddle, setPaddle] = useState<Paddle>()
+  const [paddle, setPaddle] = useState<any>(null)
 
   useEffect(() => {
-    initializePaddle({
-      environment: 'sandbox', // Replace with your Paddle environment (e.g., 'sandbox' or 'production')
-      token: 'test_c2d0ccf5a6158d9dee25c51ce59', // Replace with your Paddle authentication token
-    }).then((paddleInstance: Paddle | undefined) => {
-      if (paddleInstance) {
-        setPaddle(paddleInstance)
-      }
-    })
+    const script = document.createElement('script')
+    script.src = 'https://cdn.paddle.com/paddle/paddle.js'
+    script.async = true
+    script.onload = () => {
+      // Replace 'YOUR_PADDLE_VENDOR_ID' with your actual Paddle Vendor ID
+      const paddleInstance = paddle.Setup({ vendor: "18989" })
+      setPaddle(paddleInstance)
+    }
+    document.body.appendChild(script)
+
+    return () => {
+      document.body.removeChild(script)
+    }
   }, [])
 
   return paddle
