@@ -1,8 +1,13 @@
-'use client' // This line marks the component as a Client Component
+'use client'
 
 import { usePaddle } from '@/utils/supabase/paddle'
+import React, { ReactNode } from 'react'
 
-const ClientCheckoutButton = () => {
+interface ClientCheckoutButtonProps {
+  children: ReactNode
+}
+
+const ClientCheckoutButton = ({ children }: ClientCheckoutButtonProps) => {
   const paddle = usePaddle()
 
   const openCheckout = () => {
@@ -12,7 +17,7 @@ const ClientCheckoutButton = () => {
     })
   }
 
-  return <button onClick={openCheckout}>Buy Now</button>
+  return <button onClick={openCheckout}>{children}</button>
 }
 
 export default ClientCheckoutButton
