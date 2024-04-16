@@ -7,7 +7,7 @@ const ClientCheckoutButton = () => {
 
   const openCheckout = () => {
     paddle?.Checkout.open({
-      items: [{ priceId: 'YOUR_PRICE_ID', quantity: 1 }],
+      items: [{ priceId: "pro_01hvcx3fcwmw146qzvfy438yzx", quantity: 1 }],
       // Additional checkout options can be added here
     })
   }
