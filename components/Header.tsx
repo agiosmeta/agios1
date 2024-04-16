@@ -17,25 +17,25 @@ export default function Header() {
           <NextLogo />
         </a>
       </div>
-      <h1 className="sr-only">A G I O S</h1>
+      <h1 className="sr-only"></h1>
       <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center">
         AGIOS{" "}
         <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
+          href=""
           target="_blank"
           className="font-bold hover:underline"
           rel="noreferrer"
         >
-          Supabase
+          AGI
         </a>{" "}
-        and{" "}
+        {" "}
         <a
-          href="https://nextjs.org/"
+          href=""
           target="_blank"
           className="font-bold hover:underline"
           rel="noreferrer"
         >
-          Next.js
+          OS
         </a>
       </p>
       <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent my-8" />
