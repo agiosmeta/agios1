@@ -10,8 +10,11 @@ export const usePaddle = () => {
     script.src = 'https://cdn.paddle.com/paddle/paddle.js'
     script.async = true
     script.onload = () => {
-      // Replace 'YOUR_PADDLE_VENDOR_ID' with your actual Paddle Vendor ID
-      const paddleInstance = paddle.Setup({ vendor: '18989' })
+      const paddleInstance = paddle.Setup({
+        vendor: '18989', // Replace with your Paddle Vendor ID
+        environment: 'sandbox', // or 'production'
+        authToken: 'test_c2d0ccf5a6158d9dee25c51ce59', // Replace with your auth token
+      })
       setPaddle(paddleInstance)
     }
     document.body.appendChild(script)
