@@ -19,16 +19,16 @@ export default function Header() {
       </div>
       <h1 className="sr-only"></h1>
       <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center">
-        AGIOS{" "}
+        AGI{" "}
         <a
           href=""
           target="_blank"
           className="font-bold hover:underline"
           rel="noreferrer"
         >
-          AGI
-        </a>{" "}
-        {" "}
+        
+        </a>{""}
+        {""}
         <a
           href=""
           target="_blank"
