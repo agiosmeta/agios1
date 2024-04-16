@@ -4,7 +4,6 @@ import { createClient } from "@/utils/supabase/server";
 import FetchDataSteps from "@/components/tutorial/FetchDataSteps";
 import Header from "@/components/Header";
 import { redirect } from "next/navigation";
-import { usePaddle } from "@/utils/supabase/paddle"; // Import the usePaddle hook
 
 export default async function ProtectedPage() {
   const supabase = createClient();
@@ -17,15 +16,6 @@ export default async function ProtectedPage() {
     return redirect("/login");
   }
 
-  const paddle = usePaddle(); // Get the Paddle instance
-
-  const openCheckout = () => {
-    paddle?.Checkout.open({
-      items: [{ priceId: 'pro_01hvcx3fcwmw146qzvfy438yzx', quantity: 1 }],
-      // Additional checkout options can be added here
-    });
-  };
-
   return (
     <div className="flex-1 w-full flex flex-col gap-20 items-center">
       <div className="w-full">
@@ -37,8 +27,6 @@ export default async function ProtectedPage() {
           <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
             <DeployButton />
             <AuthButton />
-            {/* Add a new button to open the checkout */}
-            <button onClick={openCheckout}>Buy Now</button>
           </div>
         </nav>
       </div>
