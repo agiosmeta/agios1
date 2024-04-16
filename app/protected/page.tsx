@@ -1,3 +1,4 @@
+// ProtectedPage.tsx
 import DeployButton from "@/components/DeployButton";
 import AuthButton from "@/components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
@@ -28,6 +29,8 @@ export default async function ProtectedPage() {
           <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
             <DeployButton />
             <AuthButton />
+            {/* Replace the button with the ClientCheckoutButton component */}
+            <ClientCheckoutButton />
           </div>
         </nav>
       </div>
@@ -35,16 +38,6 @@ export default async function ProtectedPage() {
       <div className="animate-in flex-1 flex flex-col gap-20 opacity-0 max-w-4xl px-3">
         <Header />
         <main className="flex-1 flex flex-col gap-6">
-          {/* Add the 3D button before the "Next steps" label */}
-          <div className="flex justify-center mb-8">
-            <ClientCheckoutButton>
-              <button className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-white rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300">
-                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-black rounded-md group-hover:bg-opacity-0">
-                  Buy Now
-                </span>
-              </button>
-            </ClientCheckoutButton>
-          </div>
           <h2 className="font-bold text-4xl mb-4">Next steps</h2>
           <FetchDataSteps />
         </main>
@@ -58,11 +51,11 @@ export default async function ProtectedPage() {
             target="_blank"
             className="font-bold hover:underline"
             rel="noreferrer"
-          >
-            Supabase
-          </a>
-        </p>
-      </footer>
-    </div>
-  );
-}
+            >
+              Supabase
+            </a>
+          </p>
+        </footer>
+      </div>
+    );
+  }  
