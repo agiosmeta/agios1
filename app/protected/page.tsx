@@ -51,7 +51,7 @@ export default async function ProtectedPage() {
             className="font-bold hover:underline"
             rel="noreferrer"
             >
-              AGIOS
+              AGI OS
             </a>
           </p>
         </footer>
