@@ -11,11 +11,16 @@ export const usePaddle = () => {
     script.async = true
     script.onload = () => {
       const paddleInstance = paddle.Setup({
-        vendor: '18989', // Replace with your Paddle Vendor ID
-        environment: 'sandbox', // or 'production'
-        authToken: 'test_c2d0ccf5a6158d9dee25c51ce59', // Replace with your auth token
+        vendor: '18989', // Replace with your Paddle Sandbox Vendor ID
+        environment: "sandbox", // or 'production'
+        token: "test_c2d0ccf5a6158d9dee25c51ce59", // Replace with your Paddle Sandbox auth token if required
       })
       setPaddle(paddleInstance)
+
+      // Initialize the Paddle instance
+      paddleInstance.Paddle.initialize({
+        vendor: '18989', // Replace with your Paddle Sandbox Vendor ID
+      })
     }
     document.body.appendChild(script)
 
@@ -23,6 +28,22 @@ export const usePaddle = () => {
       document.body.removeChild(script)
     }
   }, [])
+
+  const generateCheckoutLink = async (productId: string) => {
+    if (paddle) {
+      try {
+        // Replace with your Paddle Sandbox API Key
+        const apiKey = '11095391802005acb28091770d0e1af559d20f322b68e181cc'
+        const checkoutLink = await paddle.Checkout.open({
+          product: productId,
+          auth: apiKey,
+        })
+        return checkoutLink
+      } catch (error) {
+        console.error('Error generating checkout link:', error)
+      }
+    }
+  }
 
   return paddle
 }
