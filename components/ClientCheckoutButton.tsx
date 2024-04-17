@@ -6,10 +6,11 @@ const ClientCheckoutButton = () => {
   const paddle = usePaddle()
 
   const openCheckout = () => {
-    paddle?.Checkout.open({
-      items: [{ priceId: "pro_01hvcx3fcwmw146qzvfy438yzx", quantity: 1 }],
-      // Additional checkout options can be added here
-    })
+    if (paddle) {
+      // Replace with the generated payment link from Paddle's sandbox
+      const paymentLink = 'https://agios1-7hmruamxo-agios.vercel.app/'
+      paddle.Checkout.open({ product: paymentLink })
+    }
   }
 
   return (
