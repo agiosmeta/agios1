@@ -9,9 +9,9 @@ const ClientCheckoutButton = () => {
     if (paddle) {
       try {
         // Replace with your product ID
-        const productId = 'YOUR_PRODUCT_ID'
+        const productId = 'pro_01hvcx3fcwmw146qzvfy438yzx'
         // Replace with your Paddle Sandbox API Key
-        const apiKey = 'YOUR_SANDBOX_API_KEY'
+        const apiKey = '11095391802005acb28091770d0e1af559d20f322b68e181cc'
         const checkoutLink = await paddle.Checkout.open({
           product: productId,
           auth: apiKey,

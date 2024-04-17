@@ -14,7 +14,7 @@ export const usePaddle = () => {
         const paddleInstance = window.Paddle.Setup({
           vendor: process.env.NEXT_PUBLIC_PADDLE_VENDOR_ID, // Use the environment variable
           environment: "sandbox", // or 'production'
-          token: "YOUR_SANDBOX_AUTH_TOKEN", // Replace with your Paddle Sandbox auth token if required
+          token: "test_c2d0ccf5a6158d9dee25c51ce59", // Replace with your Paddle Sandbox auth token if required
         })
         setPaddle(paddleInstance)
 

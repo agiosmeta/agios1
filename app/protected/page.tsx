@@ -6,7 +6,7 @@ import { createClient } from "@/utils/supabase/server";
 import FetchDataSteps from "@/components/tutorial/FetchDataSteps";
 import Header from "@/components/Header";
 import { redirect } from "next/navigation";
-import ClientCheckoutButton from './ClientCheckoutButton';
+import ClientCheckoutButton from '../../components/ClientCheckoutButton';
 
 const ProtectedPage = async () => {
   const supabase = createClient();
