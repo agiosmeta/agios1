@@ -1,15 +1,28 @@
 'use client'
 
-import { usePaddle } from '@/utils/supabase/paddle'
+import { usePaddle } from '@paddle/paddle-js'
 
 const ClientCheckoutButton = () => {
   const paddle = usePaddle()
 
-  const openCheckout = () => {
+  const openCheckout = async () => {
     if (paddle) {
-      // Replace with the generated payment link from Paddle's sandbox
-      const paymentLink = 'https://agios1-pwalmfvfk-agios.vercel.app'
-      paddle.Checkout.open({ product: paymentLink })
+      try {
+        // Replace with your product ID
+        const productId = 'YOUR_PRODUCT_ID'
+        // Replace with your Paddle Sandbox API Key
+        const apiKey = 'YOUR_SANDBOX_API_KEY'
+        const checkoutLink = await paddle.Checkout.open({
+          product: productId,
+          auth: apiKey,
+        })
+        if (checkoutLink) {
+          // Open the checkout link
+          window.location.href = checkoutLink
+        }
+      } catch (error) {
+        console.error('Error opening checkout:', error)
+      }
     }
   }
 
