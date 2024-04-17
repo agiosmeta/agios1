@@ -17,7 +17,7 @@ export default function DeployButton() {
            fill="currentColor"
          ></path>
        </svg>
-       Deploy to Vercel
+       Announcement Release v1.0.0
      </a>
    );
  }

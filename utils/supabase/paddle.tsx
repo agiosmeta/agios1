@@ -11,9 +11,9 @@ export const usePaddle = () => {
     script.async = true
     script.onload = () => {
       const paddleInstance = paddle.Setup({
-        vendor: '18989', // Replace with your Paddle Vendor ID
-        environment: 'sandbox', // or 'production'
-        authToken: 'test_c2d0ccf5a6158d9dee25c51ce59', // Replace with your auth token
+        //vendor: '18989', // Replace with your Paddle Vendor ID
+        environment: "sandbox", // or 'production'
+        token: "test_c2d0ccf5a6158d9dee25c51ce59", // Replace with your auth token
       })
       setPaddle(paddleInstance)
     }
