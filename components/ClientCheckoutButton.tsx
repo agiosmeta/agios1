@@ -8,7 +8,7 @@ const ClientCheckoutButton = () => {
   const openCheckout = () => {
     if (paddle) {
       // Replace with the generated payment link from Paddle's sandbox
-      const paymentLink = 'https://agios1-7hmruamxo-agios.vercel.app/'
+      const paymentLink = 'https://agios1-pwalmfvfk-agios.vercel.app'
       paddle.Checkout.open({ product: paymentLink })
     }
   }
