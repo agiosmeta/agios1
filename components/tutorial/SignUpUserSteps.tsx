@@ -6,14 +6,14 @@ export default function SignUpUserSteps() {
     <ol className="flex flex-col gap-6">
       <Step title="Sign up now!">
         <p>
-          Head over to the{" "}
+          {" "}
           <Link
             href="/login"
             className="font-bold hover:underline text-foreground/80"
           >
-            Login
+            You are awesome!
           </Link>{" "}
-          page and You are awesome!
+          
         </p>
       </Step>
     </ol>
