@@ -1,8 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import * as Paddle from '@paddle/paddle-js'
 
-export const usePaddle = () => {
+const usePaddle = () => {
   const [paddle, setPaddle] = useState<any>(null)
 
   useEffect(() => {
@@ -11,17 +12,14 @@ export const usePaddle = () => {
     script.async = true
     script.onload = () => {
       if (window.Paddle) {
-        const paddleInstance = window.Paddle.Setup({
-          vendor: process.env.NEXT_PUBLIC_PADDLE_VENDOR_ID, // Use the environment variable
-          environment: "sandbox", // or 'production'
-          token: "test_c2d0ccf5a6158d9dee25c51ce59", // Replace with your Paddle Sandbox auth token if required
-        })
+        const authToken = process.env.NEXT_PUBLIC_PADDLE_AUTH_TOKEN
+        const paddleOptions: any = {
+          vendor: process.env.NEXT_PUBLIC_PADDLE_VENDOR_ID,
+          environment: process.env.NEXT_PUBLIC_PADDLE_ENVIRONMENT,
+          authToken: authToken || undefined,
+        }
+        const paddleInstance = window.Paddle.Setup(paddleOptions)
         setPaddle(paddleInstance)
-
-        // Initialize the Paddle instance
-        paddleInstance.Paddle.initialize({
-          vendor: process.env.NEXT_PUBLIC_PADDLE_VENDOR_ID, // Use the environment variable
-        })
       } else {
         console.error('Paddle object not available')
       }
@@ -35,3 +33,5 @@ export const usePaddle = () => {
 
   return paddle
 }
+
+export default usePaddle
