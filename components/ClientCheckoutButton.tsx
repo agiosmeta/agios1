@@ -25,10 +25,10 @@ setSelectedProductId(null);
     <>
       <h2>Products</h2>
       <p>
-        Pro <button onClick={handleBuy('YOUR_PRO_PLAN_ID')}>Buy</button>
+        Pro <button onClick={handleBuy('pro_01hvcx3fcwmw146qzvfy438yzx')}>Buy</button>
       </p>
       <p>
-        Lite <button onClick={handleBuy('YOUR_LITE_PLAN_ID')}>Buy</button>
+        Lite <button onClick={handleBuy('pro_01hvkkv164kpxjmaq0s9vb2r9x')}>Buy</button>
       </p>
       {selectedProductId ? <StoreDemo handleCancel={handleCancel} /> : null}
     </>
