@@ -1,8 +1,8 @@
 'use client'
 
-import * as React from 'react'
+import React from 'react'
 import { CheckoutProvider } from '@salable/paddle-checkout-react'
-import ClientCheckoutButton from '/workspaces/agios1/components/ClientCheckoutButton'
+import ClientCheckoutButton from '@/components/ClientCheckoutButton'
 
 const ProtectedPage = () => {
   const paddleComponentId = 'paddle-wrapper'
